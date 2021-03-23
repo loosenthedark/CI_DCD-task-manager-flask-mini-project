@@ -4,21 +4,56 @@
 
 <h3 class="center-align">Add New Task</h3>
 
-<div class="row">
+<div class="row grey lighten-4 card-panel">
     <form class="col s12" method="POST" action="">
-      <div class="row">
-        <div class="input-field col s12">
-          <i class="fas fa-tasks prefix blue-text text-darken-2"></i>
-          <input id="icon_prefix" type="text" class="validate">
-          <label for="icon_prefix">First Name</label>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-folder-open prefix blue-text text-darken-2"></i>
+                <select id="category_name" name="category_name" required>
+                    <option value="" disabled selected>Choose Task Category</option>
+                    <option value="1">Option 1</option>
+                    <option value="2">Option 2</option>
+                    <option value="3">Option 3</option>
+                </select>
+            </div>
         </div>
-        <div class="input-field col s12">
-          <i class="fas fa-clipboard-list prefix blue-text text-darken-2"></i>
-          <input id="icon_telephone" type="tel" class="validate">
-          <label for="icon_telephone">Telephone</label>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-tag prefix blue-text text-darken-2"></i>
+                <input id="task_name" type="text" name="task_name" class="validate" minlength="5" maxlength="50"
+                    required>
+                <label for="task_name">Task Name</label>
+            </div>
         </div>
-      </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-clipboard-list prefix blue-text text-darken-2"></i>
+                <textarea id="task_description" name="task_description" class="materialize-textarea validate"
+                    minlength="5" maxlength="200" required></textarea>
+                <label for="task_description">Task Description</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-calendar-day prefix blue-text text-darken-2"></i>
+                <input type="text" class="datepicker validate" name="due_date" id="due_date" required>
+                <label for="due_date">Due Date</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <i class="fas fa-user-clock prefix blue-text text-darken-2"></i>
+                <div class="switch center-align">
+                    <label for="is_urgent">
+                        NOT URGENT
+                        <input type="checkbox" name="is_urgent" id="is_urgent">
+                        <span class="lever"></span>
+                        URGENT
+                    </label>
+                </div>
+            </div>
+        </div>
     </form>
-  </div>
+</div>
 
 {% endblock %}

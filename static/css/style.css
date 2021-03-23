@@ -20,7 +20,7 @@ nav .hide-on-med-and-down {
 
 /* Tasks UI */
 
-.fa-user-clock {
+#urgent {
     margin-left: 8px;
 }
 
@@ -30,6 +30,12 @@ nav .hide-on-med-and-down {
     line-height: 46px;
     height: 46px;
     font-size: 16px;
+}
+
+/* Add Task UI */
+
+.input-field .prefix.fa-user-clock {
+    top: unset;
 }
 
 /* Flash messages */
