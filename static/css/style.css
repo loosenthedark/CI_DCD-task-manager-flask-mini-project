@@ -21,7 +21,13 @@ nav .hide-on-med-and-down {
 /* Registration form */
 
 #btn-register {
-    line-height: 42px;
-    height: 42px;
+    line-height: 46px;
+    height: 46px;
     font-size: 16px;
+}
+
+/* Flash messages */
+
+.flashes h4 {
+    line-height: 2;
 }
