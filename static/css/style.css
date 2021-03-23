@@ -18,6 +18,12 @@ nav .hide-on-med-and-down {
     margin: 0 3px 0 18px;
 }
 
+/* Tasks UI */
+
+.fa-user-clock {
+    margin-left: 8px;
+}
+
 /* Registration form */
 
 #btn-register {

@@ -2,27 +2,20 @@
 
 {% block content %}
 
-    {% for task in tasks %}
-        {{ task.task_name }}<br>
-        {{ task.category_name }}<br>
-        {{ task.task_description }}<br>
-        {{ task.is_urgent }}<br>
-        {{ task.due_date }}<br>
-    {% endfor %}
-
-    <ul class="collapsible">
-        <li class="active">
-            <div class="collapsible-header yellow lighten-4"><i class="fas fa-thumbtack"></i>First</div>
-            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-        </li>
-        <li>
-            <div class="collapsible-header yellow lighten-4"><i class="fas fa-thumbtack"></i>Second</div>
-            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-        </li>
-        <li>
-            <div class="collapsible-header yellow lighten-4"><i class="fas fa-thumbtack"></i>Third</div>
-            <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-        </li>
-    </ul>
+    <div class="section">
+        <ul class="collapsible">
+            {% for task in tasks %}
+            <li>
+                <div class="collapsible-header yellow lighten-4"><i
+                        class="fas fa-thumbtack"></i><strong>{{ task.task_name }}</strong> :
+                    {{ task.due_date }} {% if task.is_urgent == "on" %} <i class="fas fa-user-clock tooltipped"
+                        data-position="right" data-tooltip="URGENT!"></i> {% endif %}</div>
+                <div class="collapsible-body grey lighten-4"><strong>{{ task.category_name }}</strong>
+                    <p>{{ task.task_description }}</p>
+                </div>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
 
 {% endblock %}
