@@ -9,27 +9,27 @@
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-folder-open prefix blue-text text-darken-2"></i>
-                <select id="category_name" name="category_name" required>
-                    <option value="" disabled selected>Choose Task Category</option>
-                    <option value="1">Option 1</option>
-                    <option value="2">Option 2</option>
-                    <option value="3">Option 3</option>
+                <select id="category_name" name="category_name" class="validate" required>
+                    <option value="" disabled selected>Select</option>
+                    {% for category in categories %}
+                    <option value="{{ category.category_name }}">{{ category.category_name }}</option>
+                    {% endfor %}
                 </select>
+                <label for="task_category">Task Category</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-tag prefix blue-text text-darken-2"></i>
-                <input id="task_name" type="text" name="task_name" class="validate" minlength="5" maxlength="50"
-                    required>
+                <input id="task_name" type="text" name="task_name" class="validate" minlength="5" maxlength="50" required>
                 <label for="task_name">Task Name</label>
             </div>
         </div>
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-clipboard-list prefix blue-text text-darken-2"></i>
-                <textarea id="task_description" name="task_description" class="materialize-textarea validate"
-                    minlength="5" maxlength="200" required></textarea>
+                <textarea id="task_description" name="task_description" class="materialize-textarea validate" minlength="5"
+                    maxlength="200" required></textarea>
                 <label for="task_description">Task Description</label>
             </div>
         </div>
