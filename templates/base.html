@@ -29,12 +29,15 @@
                 <a href="#" data-target="mobile-demo" class="sidenav-trigger right"><i class="fas fa-bars"></i></a>
                 <ul class="right hide-on-med-and-down">
                     <li><a href="{{ url_for('get_tasks') }}">Home</a></li>
-                    <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-                    <li><a href="#">New Task</a></li>
-                    <li><a href="#">Manage Categories</a></li>
-                    <li><a href="#">Log out</a></li>
-                    <li><a href="{{ url_for('login') }}">Log in</a></li>
-                    <li><a href="{{ url_for('register') }}">Register</a></li>
+                    {% if session.user %}
+                        <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+                        <li><a href="#">New Task</a></li>
+                        <li><a href="#">Manage Categories</a></li>
+                        <li><a href="{{ url_for('logout') }}">Log out</a></li>
+                    {% else %}
+                        <li><a href="{{ url_for('login') }}">Log in</a></li>
+                        <li><a href="{{ url_for('register') }}">Register</a></li>
+                    {% endif %}
                 </ul>
             </div>
         </nav>
@@ -44,25 +47,28 @@
                 <h4 class="lime-text text-darken-3">Get It Done!</h4>
             </li>
             <li><a href="{{ url_for('get_tasks') }}">Home</a></li>
-            <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
-            <li><a href="#">New Task</a></li>
-            <li><a href="#">Manage Categories</a></li>
-            <li><a href="#">Log out</a></li>
-            <li><a href="{{ url_for('login') }}">Log in</a></li>
-            <li><a href="{{ url_for('register') }}">Register</a></li>
+            {% if session.user %}
+                <li><a href="{{ url_for('profile', username=session['user']) }}">Profile</a></li>
+                <li><a href="#">New Task</a></li>
+                <li><a href="#">Manage Categories</a></li>
+                <li><a href="{{ url_for('logout') }}">Log out</a></li>
+            {% else %}
+                <li><a href="{{ url_for('login') }}">Log in</a></li>
+                <li><a href="{{ url_for('register') }}">Register</a></li>
+            {% endif %}
         </ul>
     </header>
 
     <section class="container">
         <!-- Display any flash messages here -->
         {% with messages = get_flashed_messages() %}
-            {% if messages %}
-                {% for message in messages %}
-                    <div class="row flashes">
-                        <h4 class="col s12 m8 offset-m2 center-align blue-text text-darken-2">{{ message }}</h4>
-                    </div>
-                {% endfor %}
-            {% endif %}
+        {% if messages %}
+        {% for message in messages %}
+        <div class="row flashes">
+            <h4 class="col s12 m8 offset-m2 center-align blue-text text-darken-2">{{ message }}</h4>
+        </div>
+        {% endfor %}
+        {% endif %}
         {% endwith %}
     </section>
 
