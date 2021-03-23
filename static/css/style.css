@@ -36,6 +36,34 @@ nav .hide-on-med-and-down {
 
 .input-field .prefix.fa-user-clock {
     top: unset;
+    position: relative;
+}
+
+#category_name_label {
+    font-size: 1rem;
+}
+
+#add_task_form {
+    padding: 24px;
+}
+
+#is_urgent_label {
+    position: relative;
+    left: -16px;
+    top: 10px;
+}
+
+#submit-span {
+    position: relative;
+    left: 12px;
+}
+
+.due_date_row {
+    margin-bottom: 10px;
+}
+
+.is_urgent_row {
+    margin-bottom: 36px;
 }
 
 /* Flash messages */

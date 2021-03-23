@@ -2,7 +2,8 @@
 
 {% block content %}
 
-    <div class="section">
+<h3 class="center-align">All Tasks</h3>
+
         <ul class="collapsible">
             {% for task in tasks %}
             <li>
@@ -12,10 +13,10 @@
                         data-position="right" data-tooltip="URGENT!"></i> {% endif %}</div>
                 <div class="collapsible-body grey lighten-4"><strong>{{ task.category_name }}</strong>
                     <p>{{ task.task_description }}</p>
+                    <p><em>by: {{ task.created_by }}</em></p>
                 </div>
             </li>
             {% endfor %}
         </ul>
-    </div>
 
 {% endblock %}

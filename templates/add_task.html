@@ -4,8 +4,9 @@
 
 <h3 class="center-align">Add New Task</h3>
 
-<div class="row grey lighten-4 card-panel">
-    <form class="col s12" method="POST" action="">
+<div class="row">
+    <form class="col s12 m8 offset-m2 grey lighten-4 card-panel" id="add_task_form" method="POST" action="{{ url_for('add_task') }}">
+        <!-- Task category dropdown select -->
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-folder-open prefix blue-text text-darken-2"></i>
@@ -15,9 +16,10 @@
                     <option value="{{ category.category_name }}">{{ category.category_name }}</option>
                     {% endfor %}
                 </select>
-                <label for="task_category">Task Category</label>
+                <label for="category_name" id="category_name_label">Task Category</label>
             </div>
         </div>
+        <!-- Task name text input -->
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-tag prefix blue-text text-darken-2"></i>
@@ -25,6 +27,7 @@
                 <label for="task_name">Task Name</label>
             </div>
         </div>
+        <!-- Task description textarea -->
         <div class="row">
             <div class="input-field col s12">
                 <i class="fas fa-clipboard-list prefix blue-text text-darken-2"></i>
@@ -33,18 +36,20 @@
                 <label for="task_description">Task Description</label>
             </div>
         </div>
-        <div class="row">
+        <!-- Due date picker -->
+        <div class="row due_date_row">
             <div class="input-field col s12">
                 <i class="fas fa-calendar-day prefix blue-text text-darken-2"></i>
                 <input type="text" class="datepicker validate" name="due_date" id="due_date" required>
                 <label for="due_date">Due Date</label>
             </div>
         </div>
-        <div class="row">
+        <!-- Task urgency toggle -->
+        <div class="row is_urgent_row">
             <div class="input-field col s12">
-                <i class="fas fa-user-clock prefix blue-text text-darken-2"></i>
+                <div class="center-align"><i class="fas fa-user-clock prefix blue-text text-darken-2"></i></div>
                 <div class="switch center-align">
-                    <label for="is_urgent">
+                    <label for="is_urgent" id="is_urgent_label">
                         NOT URGENT
                         <input type="checkbox" name="is_urgent" id="is_urgent">
                         <span class="lever"></span>
@@ -52,6 +57,12 @@
                     </label>
                 </div>
             </div>
+        </div>
+        <!-- Submit button -->
+        <div class="row">
+            <button class="btn waves-effect waves-light col s12 text-shadow blue darken-2" id="btn-register"
+                type="submit"><span id="submit-span">Submit</span><i class="fas fa-angle-double-right right"></i>
+            </button>
         </div>
     </form>
 </div>
