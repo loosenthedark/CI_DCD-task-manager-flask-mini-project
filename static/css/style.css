@@ -17,3 +17,11 @@ nav .brand-logo {
 nav .hide-on-med-and-down {
     margin: 0 3px 0 18px;
 }
+
+/* Registration form */
+
+#btn-register {
+    line-height: 42px;
+    height: 42px;
+    font-size: 16px;
+}
