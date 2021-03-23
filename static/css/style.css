@@ -1,0 +1,19 @@
+/* Reusable utility classes */
+
+.text-shadow {
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Navbar */
+
+.sidenav li>h4 {
+    padding: 0 32px;
+}
+
+nav .brand-logo {
+    margin: 0 18px;
+}
+
+nav .hide-on-med-and-down {
+    margin: 0 3px 0 18px;
+}
