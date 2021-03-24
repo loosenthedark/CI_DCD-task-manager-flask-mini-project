@@ -24,6 +24,57 @@ nav .hide-on-med-and-down {
     margin-left: 8px;
 }
 
+.collapsible-header {
+    line-height: 32px;
+    padding: 1rem .5rem;
+}
+
+.collapsible-header.row {
+    margin-bottom: 0;
+}
+
+.btn-floating {
+    margin: 0 3px;
+}
+
+.btn-floating:first-child {
+    box-shadow: unset;
+}
+
+.btn-floating:nth-child(2) i,
+.btn-floating:nth-child(3) i,
+.btn-floating:nth-child(2) i::before,
+.btn-floating:nth-child(3) i::before {
+    display: flex;
+}
+
+.btn-floating:nth-child(2) i,
+.btn-floating:nth-child(3) i {
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+}
+
+.btn-floating:nth-child(2) i {
+    font-size: 1rem;
+}
+
+.btn-floating:nth-child(3) i {
+    font-size: 1.2rem;
+}
+
+.btn-floating:first-child i {
+    color: rgba(0,0,0,0.87);
+}
+
+.row .col.btn-container {
+    padding-left: 0;
+}
+
+strong {
+    font-weight: 700;
+}
+
 /* Registration form */
 
 #btn-register {
@@ -55,7 +106,7 @@ nav .hide-on-med-and-down {
 
 #submit-span {
     position: relative;
-    left: 12px;
+    left: 15px;
 }
 
 .due_date_row {
