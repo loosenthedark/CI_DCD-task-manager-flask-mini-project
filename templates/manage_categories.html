@@ -3,6 +3,13 @@
 {% block content %}
 
 <h3 class="center-align">Manage Categories</h3>
+
+<div class="row section">
+    <div class="col s12 m8 offset-m2 center-align">
+        <a class="waves-effect waves-light btn-large" href="{{ url_for('add_category') }}"><i class="fas fa-folder-plus right"></i>Add New Category</a>
+    </div>
+</div>
+
 <div class="row">
     {% for category in categories %}
     <div class="col s12 m4">

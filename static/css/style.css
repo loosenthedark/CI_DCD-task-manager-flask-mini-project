@@ -98,7 +98,8 @@ strong {
 }
 
 #add_task_form,
-#edit_task_form {
+#edit_task_form,
+#add_category_form {
     padding: 24px;
 }
 
