@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h3 class="center-align">Manage Categories</h3>
+<div class="row">
+    {% for category in categories %}
+    <div class="col s12 m4">
+        <div class="card yellow lighten-4">
+            <div class="card-content center-align">
+                <h4 class="_card-title">{{ category.category_name }}</h4>
+                <p></p>
+            </div>
+            <div class="card-action center-align">
+                <a class="btn-floating waves-effect waves-light blue"
+                    href="#" id="btn-floating"><i class="fas fa-edit tooltipped"
+                        data-position="top" data-tooltip="Edit"></i></a>
+                <a class="btn-floating waves-effect waves-light red"
+                    href="#"><i class="fas fa-trash-alt tooltipped"
+                        data-position="top" data-tooltip="Delete?"></i></a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}

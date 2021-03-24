@@ -37,33 +37,33 @@ nav .hide-on-med-and-down {
     margin: 0 3px;
 }
 
-.btn-floating:first-child {
+.btn-container>.btn-floating:first-child {
     box-shadow: unset;
 }
 
-.btn-floating:nth-child(2) i,
-.btn-floating:nth-child(3) i,
-.btn-floating:nth-child(2) i::before,
-.btn-floating:nth-child(3) i::before {
+.btn-container>.btn-floating:nth-child(2) i,
+.btn-container>.btn-floating:nth-child(3) i,
+.btn-container>.btn-floating:nth-child(2) i::before,
+.btn-container>.btn-floating:nth-child(3) i::before {
     display: flex;
 }
 
-.btn-floating:nth-child(2) i,
-.btn-floating:nth-child(3) i {
+.btn-container>.btn-floating:nth-child(2) i,
+.btn-container>.btn-floating:nth-child(3) i {
     align-items: center;
     justify-content: center;
     width: 32px;
 }
 
-.btn-floating:nth-child(2) i {
+.btn-container>.btn-floating:nth-child(2) i {
     font-size: 1rem;
 }
 
-.btn-floating:nth-child(3) i {
+.btn-container>.btn-floating:nth-child(3) i {
     font-size: 1.2rem;
 }
 
-.btn-floating:first-child i {
+.btn-container>.btn-floating:first-child i {
     color: rgba(0,0,0,0.87);
 }
 
@@ -136,6 +136,18 @@ strong {
 #btn-save,
 #btn-cancel {
     margin-right: 4.2%;
+}
+
+/* Manage Categories */
+
+.card-action>.btn-floating {
+    width: 48px;
+    height: 48px;
+    line-height: 48px;
+}
+
+.card-action>.btn-floating i {
+    line-height: 48px;
 }
 
 /* Flash messages */

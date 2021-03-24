@@ -13,7 +13,7 @@
                         {% if session['user']|lower == task.created_by|lower %}
                         <a class="btn-floating btn-small waves-effect waves-light blue" href="{{ url_for('edit_task', task_id = task._id) }}"><i class="fas fa-edit tooltipped"
                         data-position="top" data-tooltip="Edit"></i></a>
-                        <a class="btn-floating btn-small waves-effect waves-light green" href="{{ url_for('delete_task', task_id = task._id) }}"><i class="fas fa-clipboard-check tooltipped" data-position="top" data-tooltip="Done"></i></a>
+                        <a class="btn-floating btn-small waves-effect waves-light green" href="{{ url_for('delete_task', task_id = task._id) }}"><i class="fas fa-clipboard-check tooltipped" data-position="top" data-tooltip="Done?"></i></a>
                         {% endif %}
                     </div>
                     <div class="col s9 xl10"><strong>{{ task.task_name }}</strong> :
