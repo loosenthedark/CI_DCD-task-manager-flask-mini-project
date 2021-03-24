@@ -8,14 +8,14 @@
             {% for task in tasks %}
             <li>
                 <div class="collapsible-header row yellow lighten-4">
-                    <div class="col s3 xl2 btn-container"><a class="btn-floating btn-small yellow lighten-4"><i
-                                class="fas fa-thumbtack tooltipped"
-                            data-position="top" data-tooltip="Open"></i></a><a
-                            class="btn-floating btn-small waves-effect waves-light blue" href="{{ url_for('edit_task', task_id = task._id) }}"><i class="fas fa-edit tooltipped"
-                            data-position="top" data-tooltip="Edit"></i></a><a
-                            class="btn-floating btn-small waves-effect waves-light green"><i
-                                class="fas fa-clipboard-check tooltipped"
-                            data-position="top" data-tooltip="Done"></i></a></div>
+                    <div class="col s3 xl2 btn-container">
+                        <a class="btn-floating btn-small yellow lighten-4"><i class="fas fa-thumbtack tooltipped" data-position="top" data-tooltip="Open"></i></a>
+                        {% if session['user']|lower == task.created_by|lower %}
+                        <a class="btn-floating btn-small waves-effect waves-light blue" href="{{ url_for('edit_task', task_id = task._id) }}"><i class="fas fa-edit tooltipped"
+                        data-position="top" data-tooltip="Edit"></i></a>
+                        <a class="btn-floating btn-small waves-effect waves-light green"><i class="fas fa-clipboard-check tooltipped" data-position="top" data-tooltip="Done"></i></a>
+                        {% endif %}
+                    </div>
                     <div class="col s9 xl10"><strong>{{ task.task_name }}</strong> :
                         {{ task.due_date }} {% if task.is_urgent == "on" %} <i class="fas fa-user-clock tooltipped" id="urgent"
                             data-position="right" data-tooltip="URGENT!"></i> {% endif %}</div>

@@ -54,7 +54,7 @@
                 <div class="switch center-align">
                     <label for="is_urgent" id="is_urgent_label">
                         NOT URGENT
-                        <input type="checkbox" name="is_urgent" id="is_urgent" {% if task.is_urgent == "on" %} checked {% endif %}>
+                        <input type="checkbox" name="is_urgent" id="is_urgent" {% if task.is_urgent == "on" %} checked {% endif %} >
                         <span class="lever"></span>
                         URGENT
                     </label>
@@ -70,7 +70,7 @@
                 type="submit"><span id="save-span">Save</span>
             </button>
             <a class="btn waves-effect waves-light text-shadow purple accent-2" id="btn-reset"
-                href="#"><span id="reset-span">Reset</span>
+                href="{{ url_for('edit_task', task_id = task._id) }}"><span id="reset-span">Reset</span>
         </a>
         </div>
     </form>
