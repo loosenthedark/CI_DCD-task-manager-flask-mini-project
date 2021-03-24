@@ -77,7 +77,10 @@ strong {
 
 /* Registration form */
 
-#btn-register {
+#btn-register,
+#btn-save,
+#btn-cancel,
+#btn-reset {
     line-height: 46px;
     height: 46px;
     font-size: 16px;
@@ -94,7 +97,8 @@ strong {
     font-size: 1rem;
 }
 
-#add_task_form {
+#add_task_form,
+#edit_task_form {
     padding: 24px;
 }
 
@@ -115,6 +119,23 @@ strong {
 
 .is_urgent_row {
     margin-bottom: 36px;
+}
+
+/* Edit Task UI */
+
+#category_name_edit option:first-child {
+    color: red;
+}
+
+#btn-save,
+#btn-cancel,
+#btn-reset {
+    width: 30%;
+}
+
+#btn-save,
+#btn-cancel {
+    margin-right: 4.2%;
 }
 
 /* Flash messages */

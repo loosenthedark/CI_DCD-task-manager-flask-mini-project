@@ -40,4 +40,14 @@ $(document).ready(function () {
             }
         });
     }
+
+    $('select#category_name_edit').parent('.select-wrapper').children('input').css({ "color": "#d1d1d1" });
+    $('select#category_name_edit').parent('.select-wrapper').children('input').focus( function() {
+        $(this).css("color","black");
+    });
+    
+    $('#edit_task_form #task_name, #edit_task_form #task_description, #edit_task_form #due_date').css({ "color": "#d1d1d1" });
+    $('#edit_task_form #task_name, #edit_task_form #task_description, #edit_task_form #due_date').focus( function() {
+        $(this).css("color","black");
+    });
 });
