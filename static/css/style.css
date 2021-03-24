@@ -79,6 +79,7 @@ strong {
 
 #btn-register,
 #btn-save,
+#btn_save,
 #btn-cancel,
 #btn-reset {
     line-height: 46px;
@@ -99,7 +100,8 @@ strong {
 
 #add_task_form,
 #edit_task_form,
-#add_category_form {
+#add_category_form,
+#edit_category_form {
     padding: 24px;
 }
 
@@ -129,6 +131,7 @@ strong {
 }
 
 #btn-save,
+#btn_save,
 #btn-cancel,
 #btn-reset {
     width: 30%;
@@ -137,6 +140,10 @@ strong {
 #btn-save,
 #btn-cancel {
     margin-right: 4.2%;
+}
+
+#edit_category_form #btn-cancel {
+    margin-left: 17.1%;
 }
 
 /* Manage Categories */

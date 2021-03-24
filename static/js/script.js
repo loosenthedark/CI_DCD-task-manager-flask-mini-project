@@ -46,8 +46,8 @@ $(document).ready(function () {
         $(this).css("color","black");
     });
     
-    $('#edit_task_form #task_name, #edit_task_form #task_description, #edit_task_form #due_date').css({ "color": "#d1d1d1" });
-    $('#edit_task_form #task_name, #edit_task_form #task_description, #edit_task_form #due_date').focus( function() {
+    $('#edit_task_form #task_name, #edit_task_form #task_description, #edit_task_form #due_date, #edit_category_form #category_name').css({ "color": "#d1d1d1" });
+    $('#edit_task_form #task_name, #edit_task_form #task_description, #edit_task_form #due_date, #edit_category_form #category_name').focus( function() {
         $(this).css("color","black");
     });
 });
