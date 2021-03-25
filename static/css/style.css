@@ -33,6 +33,11 @@ nav .hide-on-med-and-down {
     margin-bottom: 0;
 }
 
+.collapsible-body {
+    margin-left: -.75rem;
+    margin-right: -.75rem;
+}
+
 .btn-floating {
     margin: 0 3px;
 }
@@ -73,6 +78,11 @@ nav .hide-on-med-and-down {
 
 strong {
     font-weight: 700;
+}
+
+.row .red-text {
+    padding-left: 0;
+    padding-right: 0;
 }
 
 /* Registration form */

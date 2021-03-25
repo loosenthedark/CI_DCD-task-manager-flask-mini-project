@@ -3,29 +3,56 @@
 {% block content %}
 
 <h3 class="center-align">All Tasks</h3>
-
-        <ul class="collapsible">
-            {% for task in tasks %}
-            <li>
-                <div class="collapsible-header row yellow lighten-4">
-                    <div class="col s3 xl2 btn-container">
-                        <a class="btn-floating btn-small yellow lighten-4"><i class="fas fa-thumbtack tooltipped" data-position="top" data-tooltip="Open"></i></a>
-                        {% if session['user']|lower == task.created_by|lower %}
-                        <a class="btn-floating btn-small waves-effect waves-light blue" href="{{ url_for('edit_task', task_id = task._id) }}"><i class="fas fa-edit tooltipped"
-                        data-position="top" data-tooltip="Edit"></i></a>
-                        <a class="btn-floating btn-small waves-effect waves-light green" href="{{ url_for('delete_task', task_id = task._id) }}"><i class="fas fa-clipboard-check tooltipped" data-position="top" data-tooltip="Done?"></i></a>
-                        {% endif %}
-                    </div>
-                    <div class="col s9 xl10"><strong>{{ task.task_name }}</strong> :
-                        {{ task.due_date }} {% if task.is_urgent == "on" %} <i class="fas fa-user-clock tooltipped" id="urgent"
-                            data-position="right" data-tooltip="URGENT!"></i> {% endif %}</div>
+<div class="row">
+    <form class="col s12 m10 offset-m1 l8 offset-l2 grey lighten-4 card-panel hoverable" id="edit_category_form" method="POST" action="{{ url_for('search')}}">
+        <!-- Category name text input -->
+        <div class="row valign-wrapper center-align">
+            <div class="input-field col s9">
+                <i class="fab fa-searchengin prefix"></i>
+                <input id="query" type="text" name="query" class="validate" minlength="3" required>
+                <label for="query">Search Tasks...</label>
+            </div>
+            <div class="col s3">
+                <button class="btn-floating waves-effect waves-light"
+                    type="submit" id="btn-floating"><i class="fas fa-question tooltipped"
+                        data-position="top" data-tooltip="Search"></i></button>
+                <a class="btn-floating waves-effect waves-light deep-orange lighten-2"
+                    href="{{ url_for('get_tasks') }}"><i class="fas fa-redo tooltipped"
+                        data-position="top" data-tooltip="Reset"></i></a>
+            </div>
+        </div>
+    </form>
+    {% if tasks|length > 0 %}
+    <ul class="col s12 m10 offset-m1 l8 offset-l2 collapsible">
+        {% for task in tasks %}
+        <li>
+            <div class="collapsible-header row yellow lighten-4">
+                <div class="col s4 btn-container">
+                    <a class="btn-floating btn-small yellow lighten-4"><i class="fas fa-thumbtack tooltipped"
+                            data-position="top" data-tooltip="Open"></i></a>
+                    {% if session['user']|lower == task.created_by|lower %}
+                    <a class="btn-floating btn-small waves-effect waves-light blue"
+                        href="{{ url_for('edit_task', task_id = task._id) }}"><i class="fas fa-edit tooltipped"
+                            data-position="top" data-tooltip="Edit"></i></a>
+                    <a class="btn-floating btn-small waves-effect waves-light green"
+                        href="{{ url_for('delete_task', task_id = task._id) }}"><i
+                            class="fas fa-clipboard-check tooltipped" data-position="top" data-tooltip="Done?"></i></a>
+                    {% endif %}
                 </div>
-                <div class="collapsible-body grey lighten-4"><strong>{{ task.category_name }}</strong>
-                    <p>{{ task.task_description }}</p>
-                    <p><em>by: {{ task.created_by }}</em></p>
-                </div>
-            </li>
-            {% endfor %}
-        </ul>
+                <div class="col s8"><strong>{{ task.task_name }}</strong> :
+                    {{ task.due_date }} {% if task.is_urgent == "on" %} <i class="fas fa-user-clock tooltipped"
+                        id="urgent" data-position="right" data-tooltip="URGENT!"></i> {% endif %}</div>
+            </div>
+            <div class="collapsible-body grey lighten-4"><strong>{{ task.category_name }}</strong>
+                <p>{{ task.task_description }}</p>
+                <p><em>by: {{ task.created_by }}</em></p>
+            </div>
+        </li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <h4 class="center-align red-text col s12 m10 offset-m1 l8 offset-l2">Sorry, no results found! Please try again.</h4>
+    {% endif %}
+</div>
 
 {% endblock %}
